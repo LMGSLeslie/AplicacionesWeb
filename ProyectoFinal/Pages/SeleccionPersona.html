@@ -5,8 +5,9 @@
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/functions.js"></script>
     <title>Selección de Persona</title>
-
+    
     <script>
         function getPopUp() {
             var popup = document.getElementById("myPopup");
@@ -15,7 +16,7 @@
     </script>
 
     <style>
-            /* The Modal (background) */
+        /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -46,13 +47,18 @@
             font-weight: bold;
         }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-</style>
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            
+            .active{
+                background-color: lightgray !important;
+                border-color: lightgray !important;
+            }
+    </style>
 </head>
 <body>
 
@@ -64,19 +70,19 @@
     <center>
         <a href="#" style="width: 80%" class="list-group-item disabled">SELECCIONE UNA PERSONA</a>
         <div style="width: 80%; height: 400px; overflow: scroll; text-align: left" class="list-group">
-            <a href="#" class="list-group-item">Leslie Gallegos</a>
-            <a href="#" class="list-group-item">Ricardo Esquivel</a>
-            <a href="#" class="list-group-item">Gabriela Silva</a>
-            <a href="#" class="list-group-item">Pablo Sanchez</a>
-            <a href="#" class="list-group-item">Jorge Jimenez</a>
-            <a href="#" class="list-group-item">Octavio Loyola</a>
-            <a href="#" class="list-group-item">Miguel Medina</a>
-            <a href="#" class="list-group-item">Sandra Rodriguez</a>
-            <a href="#" class="list-group-item">Cesar Galvan</a>
-            <a href="#" class="list-group-item">Aldo Aguilar</a>
-            <a href="#" class="list-group-item">Julio Arriaga</a>
-            <a href="#" class="list-group-item">El Isma</a>
-            <a href="#" class="list-group-item">El Achu</a>
+            <li class="list-group-item">Leslie Gallegos</li >
+            <li class="list-group-item">Ricardo Esquivel</li >
+            <li class="list-group-item">Gabriela Silva</li >
+            <li class="list-group-item">Pablo Sanchez</li >
+            <li class="list-group-item">Jorge Jimenez</li >
+            <li class="list-group-item">Octavio Loyola</li >
+            <li class="list-group-item">Miguel Medina</li >
+            <li class="list-group-item">Sandra Rodriguez</li >
+            <li class="list-group-item">Cesar Galvan</li >
+            <li class="list-group-item">Aldo Aguilar</li >
+            <li class="list-group-item">Julio Arriaga</li >
+            <li class="list-group-item">El Isma</li >
+            <li class="list-group-item">El Achu</li >
         </div>
         <br>
   

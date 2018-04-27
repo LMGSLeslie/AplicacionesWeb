@@ -6,6 +6,55 @@
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <script src="../Scripts/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../Content/jquery.Jcrop.css" type="text/css" />
+    <script src="../Scripts/jquery.Jcrop.js"></script>
+    <script type="text/javascript">
+
+        jQuery(function ($) {
+
+            var jcrop_api;
+
+            $('#target').Jcrop({
+                onChange: showCoords,
+                onSelect: showCoords,
+                onRelease: clearCoords
+            }, function () {
+                jcrop_api = this;
+            });
+
+            $('#coords').on('change', 'input', function (e) {
+                var x1 = $('#x1').val(),
+                    x2 = $('#x2').val(),
+                    y1 = $('#y1').val(),
+                    y2 = $('#y2').val();
+                jcrop_api.setSelect([x1, y1, x2, y2]);
+            });
+
+        });
+
+        function showCoords(c) {
+            $('#x1').val(c.x);
+            $('#y1').val(c.y);
+            $('#x2').val(c.x2);
+            $('#y2').val(c.y2);
+            $('#w').val(c.w);
+            $('#h').val(c.h);
+        };
+
+        function clearCoords() {
+            $('#coords input').val('');
+        };
+
+    </script>
+    <script>
+        $('#target').Jcrop({
+            onChange: updatePreview,
+            onSelect: updatePreview,
+            aspectRatio: 637.5 / 825
+        })
+
+    </script>
     <script>
         function readURL(input) {
             $('#inImage').hide();
@@ -13,10 +62,14 @@
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#modelo')
+                    jcrop_coso = $.Jcrop('#target')
+                    jcrop_coso.setImage(e.target.result);
+                    $('#target').Jcrop({ boxWidth: 637.5, boxHeight: 825 });
+                    /*$('#target').width(637.5).height(825);
+                    $('#target')
                         .attr('src', e.target.result)
                         .width(637.5)
-                        .height(825);
+                        .height(825);*/
                 };
                 //dimensiones de 10% w 425 h 550
                 //dimensiones de 15% w 637.5 h 825
@@ -33,21 +86,30 @@
             color: white;
             width: 250px;
         }
-        input[type="file"]{
-            display:none;
+
+        input[type="file"] {
+            display: none;
         }
-        .btn btn-dark btn-outline-dark{
-            width:250px;
+
+        .btn btn-dark btn-outline-dark {
+            width: 250px;
         }
-        .col-1{
+
+        .col-1 {
             margin-bottom: -99999px;
         }
-        .container-fluid{
-            min-height:100%;
-            overflow:hidden;
+
+        .container-fluid {
+            min-height: 100%;
+            overflow: hidden;
         }
-        body, html{
-            height:100%;
+
+        body, html {
+            height: 100%;
+        }
+
+        .responsive-width {
+            font-size: 1.3vw;
         }
     </style>
 </head>
@@ -57,21 +119,31 @@
         <div class="row">
             <div class="col-1" style="background-color:black">
                 <br />
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">MñI</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">AI</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">MI</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">II</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">PI</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">PlI</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">MñD</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">AD</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">MD</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">ID</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">PD</button>
-                <button class="btn btn-dark btn-outline-dark" style="width:100%">PlD</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">MñI</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">AI</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">MI</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">II</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">PI</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">PlI</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">MñD</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">AD</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">MD</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">ID</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">PD</button>
+                <button class="btn btn-dark btn-outline-dark responsive-width" style="width:100%">PlD</button>
             </div>
             <div class="col-8">
-                <img id="modelo" src="#" alt="UPLOAD YOUR MODEL" class="img-responsive" style="overflow:scroll">
+                <img id="target" src="#" alt="UPLOAD YOUR MODEL" class="img-responsive" style="overflow:scroll">
+                <form id="coords" class="coords" onsubmit="return false;" action="http://example.com/post.php">
+                    <div class="inline-labels">
+                        <label>X1 <input type="text" size="4" id="x1" name="x1" /></label>
+                        <label>Y1 <input type="text" size="4" id="y1" name="y1" /></label>
+                        <label>X2 <input type="text" size="4" id="x2" name="x2" /></label>
+                        <label>Y2 <input type="text" size="4" id="y2" name="y2" /></label>
+                        <label>W <input type="text" size="4" id="w" name="w" /></label>
+                        <label>H <input type="text" size="4" id="h" name="h" /></label>
+                    </div>
+                </form>
             </div>
             <div class="col-3">
                 <br />
@@ -94,6 +166,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 </body>

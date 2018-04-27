@@ -39,33 +39,62 @@
         .btn btn-dark btn-outline-dark{
             width:250px;
         }
+        .col-1{
+            margin-bottom: -99999px;
+        }
+        .container-fluid{
+            min-height:100%;
+            overflow:hidden;
+        }
+        body, html{
+            height:100%;
+        }
     </style>
 </head>
 <body>
     <div style="background-color: black"><img src="http://blitzrdigital.com/wp-content/uploads/2017/01/fingerprint.png" alt="huellita" width="100" height="70"></div>
-    <div class="table-responsive">
-        <table style="height: auto;" class="table">
-            <tr>
-                <td alig="center" width="650px" rowspan="10" style="background-color: #e8e8e8"><img id="modelo" src="#" alt="UPLOAD YOUR MODEL" class="img-responsive" style="overflow:scroll" ></td>
-                <td align="center" style="vertical-align: middle;" colspan="2"><a href="../Pages/SeleccionPlantilla.html" class="btn btn-dark btn-outline-dark">CAMBIAR PLANTILLA</a></td>
-            </tr>
-            <tr>
-                <td align="center" style="vertical-align: middle;" colspan="2"><button type="button" style="width=100px" class="btn btn-dark btn-outline-dark">GUARDAR PLANTILLA</button></td>
-            </tr>
-            <tr>
-                <td align="center" style="vertical-align: middle;" colspan="2"><a href="../Pages/SeleccionPersona.html" class="btn btn-dark btn-outline-dark">ASIGNAR HUELLAS</a></td>
-            </tr>
-            <tr>
-                <div style="height:0px;overflow:hidden">
-                    <input type="file" id="fileInput" name="fileInput"/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1" style="background-color:black">
+                <br />
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">MñI</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">AI</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">MI</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">II</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">PI</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">PlI</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">MñD</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">AD</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">MD</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">ID</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">PD</button>
+                <button class="btn btn-dark btn-outline-dark" style="width:100%">PlD</button>
+            </div>
+            <div class="col-8">
+                <img id="modelo" src="#" alt="UPLOAD YOUR MODEL" class="img-responsive" style="overflow:scroll">
+            </div>
+            <div class="col-3">
+                <br />
+                <div class="row">
+                    <a href="../Pages/SeleccionPlantilla.html" style=" width:95%" class="btn btn-dark btn-outline-dark">CAMBIAR PLANTILLA</a>
                 </div>
-                <td align="center" style="vertical-align: middle;" colspan="2">
-                    <label class="btn btn-dark btn-outline-dark">
-                        <input id="inImage" type="file" onchange="readURL(this);"/>CARGAR HUELLAS
+                <br />
+                <div class="row">
+                    <button type="button" style="width:95%" class="btn btn-dark btn-outline-dark">GUARDAR PLANTILLA</button>
+                </div>
+                <br />
+                <div class="row">
+                    <a href="../Pages/SeleccionPersona.html" class="btn btn-dark btn-outline-dark" style=" width:95%">ASIGNAR HUELLAS</a>
+                </div>
+                <br />
+                <div class="row">
+                    <label class="btn btn-dark btn-outline-dark" style="width:95%">
+                        <input id="inImage" type="file" onchange="readURL(this);" />CARGAR HUELLAS
                     </label>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>

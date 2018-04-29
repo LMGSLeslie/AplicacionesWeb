@@ -127,6 +127,7 @@
     <Content Include="Pages\PantallaPrincipalMovil.html" />
     <Content Include="Pages\Seleccion.html" />
     <Content Include="Pages\SeleccionMovil.html" />
+    <Content Include="Pages\SeleccionPersona.aspx" />
     <Content Include="Pages\SeleccionPersona.html" />
     <Content Include="Pages\SeleccionPersonaMovil.html" />
     <Content Include="Pages\SeleccionPlantilla.html" />
@@ -186,6 +187,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SeleccionPersona.aspx.cs">
+      <DependentUpon>SeleccionPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SeleccionPersona.aspx.designer.cs">
+      <DependentUpon>SeleccionPersona.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +212,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Pages\Controllers\" />
+    <Folder Include="Pruebas\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

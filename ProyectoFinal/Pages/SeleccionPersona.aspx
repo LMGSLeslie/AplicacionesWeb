@@ -55,17 +55,37 @@
             }
     </style>
     <script>
-        $(document).ready(function () {
-            $('#siguiente').on('click',function () {
-                history.back(.1);
-            });
-        });
+        function Backward(oSpyID)
+        {
+           // The hidden post-back spy or counter field
+           var spy = null;
+           // Total number of post-backs
+           var refreshes = new Number(0);
+           // Allows the actual previous page to be selected
+           var offset = new Number(1);
+
+           spy = document.getElementById(oSpyID);
+
+           refreshes = new Number(spy.value) + offset;
+
+           history.go(-refreshes);
+           // Redirects to the actual previous page
+        }
+
+
+
+        function Forward()
+        {
+           history.forward(1);
+           // Redirects if the next page exists,
+           // including the post-back versions.
+        }
     </script>
 
 </head>
 <body>
     <div style="background-color: black; width: 100%">
-        <img src="http://blitzrdigital.com/wp-content/uploads/2017/01/fingerprint.png" width="100" height="70">
+        <img src="http://blitzrdigital.com/wp-content/uploads/2017/01/fingerprint.png" width="100" height="70"/>
     </div>
     <br/><br/>
     <center>
@@ -79,22 +99,23 @@
             <br/>
             <asp:Label ID="lmao" runat="server">lmaaaaaao</asp:Label>
   
-  
-        <div class="row">
+            <div class="row">
             
-            <div class="col-lg-4">
-                <asp:Button ID="volver" runat="server" Text="VOLVER" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="Volver"/>
-            </div>
+                <div class="col-lg-4">
+                    <asp:Button ID="volver" runat="server" Text="VOLVER" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClick="Volver"/>
+                </div>
 
-            <div class="col-lg-4" id="myBtn">
-                <asp:Button ID="Agregar" runat="server" Text="AGREGAR PERSONA" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="AgregarPersona"/>
-            </div>
+                <div class="col-lg-4" id="myBtn">
+                    <asp:Button ID="Agregar" runat="server" Text="AGREGAR PERSONA" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="AgregarPersona"/>
+                </div>
 
-            <div class="col-lg-4">
-                <asp:Button ID="siguiente" runat="server" Text="SELECCIONAR" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" />
+                <div class="col-lg-4">
+                    <asp:Button ID="siguiente" runat="server" Text="SELECCIONAR" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" />
+                </div>
             </div>
-        </div>
-            </form>
+            <input type="hidden" id="inputPostBackSpy" runat="server" />
+
+        </form>
   
   
         <!-- The Modal -->

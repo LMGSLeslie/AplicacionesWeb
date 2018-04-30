@@ -56,13 +56,12 @@ namespace ProyectoFinal.Pages
         }
         protected void Seleccionar(object sender, EventArgs e)
         {
-            
+            Response.Redirect(Request.UrlReferrer.ToString(), true);
         }
 
         protected void Volver(object sender, EventArgs e)
         {
-            lmao.Text = "asasdasd";
-            Response.Redirect("../Pages/PantallaPrincipal.html");
+            Response.Redirect("../Pages/PantallaPrincipal.html",true);
         }
         /*   protected void HazAlgoALV(object sender, EventArgs e)
           {

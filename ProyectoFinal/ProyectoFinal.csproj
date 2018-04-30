@@ -128,7 +128,6 @@
     <Content Include="Pages\Seleccion.html" />
     <Content Include="Pages\SeleccionMovil.html" />
     <Content Include="Pages\SeleccionPersona.aspx" />
-    <Content Include="Pages\SeleccionPersona.html" />
     <Content Include="Pages\SeleccionPersonaMovil.html" />
     <Content Include="Pages\SeleccionPlantilla.html" />
     <Content Include="Pages\SeleccionPlantillaMovil.html" />

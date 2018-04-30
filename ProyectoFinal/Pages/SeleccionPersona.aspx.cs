@@ -5,51 +5,76 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Windows;
 
 namespace ProyectoFinal.Pages
 {
     public partial class SeleccionPersona : System.Web.UI.Page
     {
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id = lesma; Password=Database2350.");
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id = lesma; Password=Database2350.");
+            siguiente.Attributes.Add("onClick", "javascript:history.back(-1); return false;");
             conn.Open();
+                SqlCommand cmnd = new SqlCommand("SELECT persona_id, nombre+' ' + apellido as FULLNAME FROM Persona");
+                cmnd.CommandType = System.Data.CommandType.Text;
+                cmnd.Connection = conn;
 
-            SqlCommand cmnd = new SqlCommand("SELECT nombre+' ' + apellido as FULLNAME FROM Persona");
-            cmnd.CommandType = System.Data.CommandType.Text;
-            cmnd.Connection = conn;
+                SqlDataReader reader = cmnd.ExecuteReader();
 
-            SqlDataReader reader = cmnd.ExecuteReader();
+                SqlDataAdapter adp = new SqlDataAdapter(cmnd);
 
-            SqlDataAdapter adp = new SqlDataAdapter(cmnd);
-
-            personas.DataSource = reader;
-            personas.DataBind();
-            conn.Close();
-
+                personas.DataSource = reader;
+                personas.DataBind();
+                conn.Close();
         }
-        protected void PeopleGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onmouseover"] = "this.style.cursor='hand';this.style.textDecoration='underline';";
-                e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
-
-                e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.personas, "Select$" + e.Row.RowIndex);
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(personas, "Select$" + e.Row.RowIndex);
+                e.Row.ToolTip = "Click para selecionar esta persona.";
             }
         }
 
-         /*   protected void HazAlgoALV(object sender, EventArgs e)
-           {
-               var nombreText = nombre.Text;
-               var apellidoText = apellido.Text;
+        protected void OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in personas.Rows)
+            {
+                if (row.RowIndex == personas.SelectedIndex)
+                {
+                    row.BackColor = System.Drawing.Color.LightGray;
+                    row.ToolTip = string.Empty;
+                }
+                else
+                {
+                    row.ToolTip = "Click to select this row.";
+                }
+                lmao.Text = personas.SelectedRow.Cells[0].Text;
+            }
+        }
+        protected void Seleccionar(object sender, EventArgs e)
+        {
+            
+        }
 
-               if (nombreText == "" || apellidoText == "") { 
+        protected void Volver(object sender, EventArgs e)
+        {
+            lmao.Text = "asasdasd";
+            Response.Redirect("../Pages/PantallaPrincipal.html");
+        }
+        /*   protected void HazAlgoALV(object sender, EventArgs e)
+          {
+              var nombreText = nombre.Text;
+              var apellidoText = apellido.Text;
 
-                //   ClientScript.RegisterStartupScript(this.GetType(), "Campos Requeridos", "alert('" + "Por favor llena todos los campos" + "');", true);
+              if (nombreText == "" || apellidoText == "") { 
+
+               //   ClientScript.RegisterStartupScript(this.GetType(), "Campos Requeridos", "alert('" + "Por favor llena todos los campos" + "');", true);
 
 
-               }
-           }*/
+              }
+          }*/
     }
 }

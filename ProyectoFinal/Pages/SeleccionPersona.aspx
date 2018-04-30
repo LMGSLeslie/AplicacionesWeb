@@ -54,6 +54,14 @@
                 border-color: lightgray !important;
             }
     </style>
+    <script>
+        $(document).ready(function () {
+            $('#siguiente').on('click',function () {
+                history.back(.1);
+            });
+        });
+    </script>
+
 </head>
 <body>
     <div style="background-color: black; width: 100%">
@@ -64,34 +72,31 @@
         <form runat="server">
             <a href="#" style="width: 80%" class="list-group-item disabled">SELECCIONE UNA PERSONA</a>
             <div style="width: 80%; height: 400px; overflow: scroll; text-align: left" class="list-group">
-                <asp:DataGrid ID="personas" runat="server" BorderColor="LightGray" BorderWidth="1px" BorderStyle="Dotted" CellSpacing="200" ClientIDMode="Static" OnRowDataBound="OnRowDataBound">
-                    <Columns>
-                        <asp:ButtonColumn CommandName="Select" Text="Seleccionar" ></asp:ButtonColumn>
-                    </Columns>
-                    <EditItemStyle HorizontalAlign="Center" Width="100%" />
-                    <ItemStyle BorderColor="Gray" BorderStyle="None" CssClass="btn-outline-dark" HorizontalAlign="Center" />
-                    <SelectedItemStyle BackColor="#CCCCCC" />
-                </asp:DataGrid>
+                <asp:GridView ID="personas" runat="server" BorderColor="LightGray" BorderWidth="1px" BorderStyle="Dotted" CellSpacing="10" ClientIDMode="Static" AutoGenerateColumns="true"  Width="100%" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged" >
+                    <RowStyle BorderColor="LightGray" Width="100%" CssClass="btn-outline-dark" HorizontalAlign="Center" Font-Size="Larger" Font-Strikeout="False" Height="50px"/>
+                </asp:GridView>
             </div>
             <br/>
             <asp:Label ID="lmao" runat="server">lmaaaaaao</asp:Label>
-            </form>
   
   
         <div class="row">
             
             <div class="col-lg-4">
-                <a href="../Pages/PantallaPrincipal.html" class="btn btn-dark btn-outline-dark">VOLVER</a>
+                <asp:Button ID="volver" runat="server" Text="VOLVER" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="Volver"/>
+            </div>
+
+            <div class="col-lg-4" id="myBtn">
+                <asp:Button ID="Agregar" runat="server" Text="AGREGAR PERSONA" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="AgregarPersona"/>
             </div>
 
             <div class="col-lg-4">
-                <button id="myBtn" class="btn btn-dark btn-outline-dark">AGREGAR PERSONA</button>
-            </div>
-
-            <div class="col-lg-4">
-                <button class="btn btn-dark btn-outline-dark" id="Siguiente">SELECCIONAR</button>
+                <asp:Button ID="siguiente" runat="server" Text="SELECCIONAR" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" />
             </div>
         </div>
+            </form>
+  
+  
         <!-- The Modal -->
         <div id="myModal" class="modal">
         <!-- Modal content -->

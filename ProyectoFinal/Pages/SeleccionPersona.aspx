@@ -71,8 +71,11 @@
            history.go(-refreshes);
            // Redirects to the actual previous page
         }
-
-
+    function windowOpen() {
+      myWindow=window.open('dummy.aspx','_blank','width=500,height=500, scrollbars=no,resizable=no')
+      myWindow.focus()
+      return false;
+  }
 
         function Forward()
         {
@@ -106,10 +109,10 @@
                 </div>
 
                 <div class="col-lg-4" id="myBtn">
-                    <asp:Button ID="Agregar" runat="server" Text="AGREGAR PERSONA" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="AgregarPersona"/>
+                    <asp:Button runat="server" CssClass="btn btn-dark btn-outline-dark" id="btnClick" text="AGREGAR" onClientClick="return windowOpen()"/>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4">  
                     <asp:Button ID="siguiente" runat="server" Text="SELECCIONAR" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" />
                 </div>
             </div>

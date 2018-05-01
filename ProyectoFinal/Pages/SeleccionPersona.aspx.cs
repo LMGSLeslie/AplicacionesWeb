@@ -11,7 +11,7 @@ namespace ProyectoFinal.Pages
 {
     public partial class SeleccionPersona : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id = lesma; Password=Database2350.");
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q;Database = AplicacionesWeb; User Id = Rhapsodic; Password=wonderland01");
 
         protected void Page_Load(object sender, EventArgs e)
         {

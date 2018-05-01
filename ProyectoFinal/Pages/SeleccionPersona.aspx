@@ -102,7 +102,7 @@
             <div class="row">
             
                 <div class="col-lg-4">
-                    <asp:Button ID="volver" runat="server" Text="VOLVER" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClick="Volver"/>
+                    <a href="javascript:history.back(-1);" class="btn btn-dark btn-outline-dark">VOLVER</a>
                 </div>
 
                 <div class="col-lg-4" id="myBtn">

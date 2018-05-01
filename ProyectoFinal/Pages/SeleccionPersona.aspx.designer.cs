@@ -31,15 +31,6 @@ namespace ProyectoFinal.Pages {
         protected global::System.Web.UI.WebControls.Label lmao;
         
         /// <summary>
-        /// Control volver.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button volver;
-        
-        /// <summary>
         /// Control Agregar.
         /// </summary>
         /// <remarks>
@@ -56,5 +47,14 @@ namespace ProyectoFinal.Pages {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button siguiente;
+        
+        /// <summary>
+        /// Control inputPostBackSpy.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden inputPostBackSpy;
     }
 }

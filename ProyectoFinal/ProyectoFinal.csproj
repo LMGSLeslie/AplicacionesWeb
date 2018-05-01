@@ -120,6 +120,7 @@
     <Content Include="Images\HuellasLoginMovil.jpg" />
     <Content Include="Images\HuellasSeleccion.jpg" />
     <Content Include="Images\IconoBarra.png" />
+    <Content Include="Pages\AgregarPersona.aspx" />
     <Content Include="Pages\AgregarPersonaMovil.html" />
     <Content Include="Pages\Login.html" />
     <Content Include="Pages\LoginMovil.html" />
@@ -186,6 +187,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AgregarPersona.aspx.cs">
+      <DependentUpon>AgregarPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AgregarPersona.aspx.designer.cs">
+      <DependentUpon>AgregarPersona.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\SeleccionarPersonaMovil.aspx.cs">
       <DependentUpon>SeleccionarPersonaMovil.aspx</DependentUpon>

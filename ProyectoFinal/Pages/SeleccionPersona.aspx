@@ -9,51 +9,13 @@
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/functions.js"></script>
-    <style>
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    <script>
+        function windowOpen() {
+            myWindow=window.open('AgregarPersona.aspx','_blank','width=500,height=500, scrollbars=no,resizable=no')
+            myWindow.focus()
+            return false;
         }
-
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-            .close:hover,
-            .close:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
-            }
-            
-            .active{
-                background-color: lightgray !important;
-                border-color: lightgray !important;
-            }
-    </style>
+    </script>
 </head>
 <body>
     <div style="background-color: black; width: 100%">
@@ -78,7 +40,7 @@
                 </div>
 
                 <div class="col-lg-4" id="myBtn">
-                    <asp:Button ID="Agregar" runat="server" Text="AGREGAR PERSONA" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="AgregarPersona"/>
+                    <asp:Button ID="Agregar" runat="server" Text="AGREGAR PERSONA" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" OnClientClick="return windowOpen()"/>
                 </div>
 
                 <div class="col-lg-4">
@@ -86,15 +48,7 @@
                 </div>
             </div>
             <input type="hidden" id="inputPostBackSpy" runat="server" />
-
         </form>
-  
-  
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-        <!-- Modal content -->
-            
-        </div>
     </center>
     <br/>
 </body>

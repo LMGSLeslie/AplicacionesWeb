@@ -126,6 +126,7 @@
     <Content Include="Pages\PantallaPrincipal.html" />
     <Content Include="Pages\PantallaPrincipalMovil.html" />
     <Content Include="Pages\Seleccion.html" />
+    <Content Include="Pages\SeleccionarPersonaMovil.aspx" />
     <Content Include="Pages\SeleccionMovil.html" />
     <Content Include="Pages\SeleccionPersona.aspx" />
     <Content Include="Pages\SeleccionPersonaMovil.html" />
@@ -185,6 +186,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SeleccionarPersonaMovil.aspx.cs">
+      <DependentUpon>SeleccionarPersonaMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SeleccionarPersonaMovil.aspx.designer.cs">
+      <DependentUpon>SeleccionarPersonaMovil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\SeleccionPersona.aspx.cs">
       <DependentUpon>SeleccionPersona.aspx</DependentUpon>

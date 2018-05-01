@@ -10,7 +10,16 @@
 namespace ProyectoFinal.Pages {
     
     
-    public partial class SeleccionPersona {
+    public partial class SeleccionarPersonaMovil {
+        
+        /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// Control personas.
@@ -22,13 +31,13 @@ namespace ProyectoFinal.Pages {
         protected global::System.Web.UI.WebControls.GridView personas;
         
         /// <summary>
-        /// Control lmao.
+        /// Control AgregarPersona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lmao;
+        protected global::System.Web.UI.WebControls.Button AgregarPersona;
         
         /// <summary>
         /// Control volver.
@@ -40,15 +49,6 @@ namespace ProyectoFinal.Pages {
         protected global::System.Web.UI.WebControls.Button volver;
         
         /// <summary>
-        /// Control Agregar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Agregar;
-        
-        /// <summary>
         /// Control siguiente.
         /// </summary>
         /// <remarks>
@@ -56,14 +56,5 @@ namespace ProyectoFinal.Pages {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button siguiente;
-        
-        /// <summary>
-        /// Control inputPostBackSpy.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden inputPostBackSpy;
     }
 }

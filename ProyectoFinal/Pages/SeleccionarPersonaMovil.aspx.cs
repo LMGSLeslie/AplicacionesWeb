@@ -5,12 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-using System.Windows;
 
 namespace ProyectoFinal.Pages
 {
-    public partial class SeleccionPersona : System.Web.UI.Page
+    public partial class SeleccionarPersonaMovil : System.Web.UI.Page
     {
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id = lesma; Password=Database2350.");
         private int PostBackCount
         {
             get
@@ -22,31 +22,22 @@ namespace ProyectoFinal.Pages
             }
             set { ViewState["PostBackCount"] = value; }
         }
-
-        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id = lesma; Password=Database2350.");
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                PostBackCount++;
-                lmao.Text = PostBackCount.ToString();
-            }
-            volver.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount+1) + "); return false;");
+            volver.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
             siguiente.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
-            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "CallJS", "afterpostback();", true);
             conn.Open();
-                SqlCommand cmnd = new SqlCommand("SELECT persona_id, nombre+' ' + apellido as FULLNAME FROM Persona");
-                cmnd.CommandType = System.Data.CommandType.Text;
-                cmnd.Connection = conn;
+            SqlCommand cmnd = new SqlCommand("SELECT persona_id , nombre+' ' + apellido as FULLNAME FROM Persona");
+            cmnd.CommandType = System.Data.CommandType.Text;
+            cmnd.Connection = conn;
 
-                SqlDataReader reader = cmnd.ExecuteReader();
+            SqlDataReader reader = cmnd.ExecuteReader();
 
-                SqlDataAdapter adp = new SqlDataAdapter(cmnd);
+            SqlDataAdapter adp = new SqlDataAdapter(cmnd);
 
-                personas.DataSource = reader;
-                personas.DataBind();
-                conn.Close();
+            personas.DataSource = reader;
+            personas.DataBind();
+            conn.Close();
         }
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -72,21 +63,6 @@ namespace ProyectoFinal.Pages
                 }
             }
         }
-        protected void Seleccionar(object sender, HistoryEventArgs e)
-        {
-            
-        }
-        /*   protected void HazAlgoALV(object sender, EventArgs e)
-          {
-              var nombreText = nombre.Text;
-              var apellidoText = apellido.Text;
 
-              if (nombreText == "" || apellidoText == "") { 
-
-               //   ClientScript.RegisterStartupScript(this.GetType(), "Campos Requeridos", "alert('" + "Por favor llena todos los campos" + "');", true);
-
-
-              }
-          }*/
     }
 }

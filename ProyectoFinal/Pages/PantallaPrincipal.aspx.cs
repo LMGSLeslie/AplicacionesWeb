@@ -17,7 +17,7 @@ namespace ProyectoFinal.Pages
         public static string [] aw = new string[12];
         public static string [] ah = new string[12];
         public static int[] path = new int[12];
-        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id =lesma; Password=Database2350." + "");
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q; Database = AplicacionesWeb; User Id = Rhapsodic; Password = wonderland01" + "");
         SqlDataReader reader;
 
         protected void Page_Load(object sender, EventArgs e)

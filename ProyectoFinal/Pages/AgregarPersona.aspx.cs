@@ -24,7 +24,7 @@ namespace ProyectoFinal.Pages
             else {
                 string nom = nombre.Text.ToString();
                 string ape = apellido.Text.ToString();
-                SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id = lesma; Password=Database2350.");
+                SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q; Database = AplicacionesWeb; User Id = Rhapsodic; Password = wonderland01");
                 conn.Open();
                 SqlCommand cmnd = new SqlCommand("INSERT INTO Persona (nombre,apellido) VALUES('"+nom+"','"+ape+"')");
                 cmnd.CommandType = System.Data.CommandType.Text;

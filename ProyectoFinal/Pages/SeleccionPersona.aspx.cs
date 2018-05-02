@@ -23,14 +23,13 @@ namespace ProyectoFinal.Pages
             set { ViewState["PostBackCount"] = value; }
         }
 
-        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id =lesma; Password=Database2350.");
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q; Database = AplicacionesWeb; User Id = Rhapsodic; Password = wonderland01");
         
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack)
             {
                 PostBackCount++;
-                lmao.Text = PostBackCount.ToString();
             }
             volver.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount+1) + "); return false;");
             siguiente.Enabled = false;

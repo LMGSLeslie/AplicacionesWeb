@@ -23,7 +23,7 @@ namespace ProyectoFinal.Pages
             }
             else { 
 
-                SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q; Database = AplicacionesWeb; User Id = Rhapsodic; Password = wonderland01");
+                SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI; Database = AplicacionesWeb; User Id = lesma; Password = Database2350.");
                 SqlCommand cmnd = new SqlCommand("SELECT * FROM Usuario WHERE email = '" + email.Text + "'");
                 cmnd.Connection = conn;
                 cmnd.CommandType = System.Data.CommandType.Text;

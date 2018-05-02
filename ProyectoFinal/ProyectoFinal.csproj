@@ -134,7 +134,6 @@
     <Content Include="Pages\SeleccionPersona.aspx" />
     <Content Include="Pages\SeleccionPersonaMovil.html" />
     <Content Include="Pages\SeleccionPlantilla.aspx" />
-    <Content Include="Pages\SeleccionPlantilla.html" />
     <Content Include="Pages\SeleccionPlantillaMovil.html" />
     <Content Include="Pruebas\WebForm1.aspx" />
     <Content Include="Pruebas\WebForm2.aspx" />

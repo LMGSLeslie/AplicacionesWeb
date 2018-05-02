@@ -24,9 +24,7 @@
                     <RowStyle BorderColor="LightGray" Width="100%" CssClass="btn-outline-dark" HorizontalAlign="Center" Font-Size="Larger" Font-Strikeout="False" Height="50px"/>
                 </asp:GridView>
             </div>
-            <br/>
-            <asp:Label ID="lmao" runat="server">lmaaaaaao</asp:Label>
-  
+            <br/>  
             <div class="row">
             
                 <div class="col-lg-6">
@@ -34,7 +32,7 @@
                 </div>
                 
                 <div class="col-lg-6">
-                    <asp:Button ID="siguiente" runat="server" Text="SELECCIONAR" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" />
+                    <asp:Button ID="siguiente" runat="server" Text="SELECCIONAR" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" onclick="Seleccionar"/>
                 </div>
             </div>
     </form>

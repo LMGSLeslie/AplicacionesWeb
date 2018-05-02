@@ -23,7 +23,7 @@ namespace ProyectoFinal.Pages
             set { ViewState["PostBackCount"] = value; }
         }
 
-        SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q;Database = AplicacionesWeb; User Id =Rhapsodic; Password=wonderland01");
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id =lesma; Password=Database2350.");
         
         protected void Page_Load(object sender, EventArgs e)
         {

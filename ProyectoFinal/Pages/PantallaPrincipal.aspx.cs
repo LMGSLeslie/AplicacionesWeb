@@ -30,7 +30,7 @@ namespace ProyectoFinal.Pages
 
         protected void CambiarPlantilla(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pages/SeleccionPlantilla.html");
+            Response.Redirect("~/Pages/SeleccionPlantilla.aspx");
         }
 
         protected void asignarHuellas(object sender, EventArgs e)

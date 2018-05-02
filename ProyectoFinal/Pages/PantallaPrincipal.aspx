@@ -126,7 +126,6 @@
                     <div class="row">
                         <asp:FileUpload ID="FU1" runat="server" />  
                         <asp:Button runat="server" Text="CARGAR HUELLAS" CssClass="btn btn-dark btn-outline-dark" OnClientClick="fileUpload(); return true;" OnClick="cargarImagen" Width="95%"/>
-                        <asp:Label runat="server" ID="label">asdasd</asp:Label>
                     </div>
                     <div class="row">
                         <asp:Label runat="server">X: </asp:Label>

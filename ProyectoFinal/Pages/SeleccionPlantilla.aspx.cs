@@ -22,7 +22,7 @@ namespace ProyectoFinal.Pages
             set { ViewState["PostBackCount"] = value; }
         }
 
-        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id =lesma; Password=Database2350.");
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q;Database = AplicacionesWeb; User Id =Rhapsodic; Password=wonderland01");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,6 +33,7 @@ namespace ProyectoFinal.Pages
                 lmao.Text = PostBackCount.ToString();
             }
             volver.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
+            siguiente.Enabled = false;
             siguiente.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
             ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "CallJS", "afterpostback();", true);
             conn.Open();
@@ -64,6 +65,7 @@ namespace ProyectoFinal.Pages
             {
                 if (row.RowIndex == plantillas.SelectedIndex)
                 {
+                    siguiente.Enabled = true;
                     row.BackColor = System.Drawing.Color.LightGray;
                     row.ToolTip = string.Empty;
                 }

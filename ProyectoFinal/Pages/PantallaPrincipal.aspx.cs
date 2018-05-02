@@ -16,6 +16,9 @@ namespace ProyectoFinal.Pages
         public static string [] ay = new string[12];
         public static string [] aw = new string[12];
         public static string [] ah = new string[12];
+        public static int[] path = new int[12];
+        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id =lesma; Password=Database2350." + "");
+        SqlDataReader reader;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -101,13 +104,17 @@ namespace ProyectoFinal.Pages
 
         protected void asignarHuellas(object sender, EventArgs e)
         {
-            if(MñI.Enabled==true|| AI.Enabled == true|| MI.Enabled == true|| II.Enabled == true|| PI.Enabled == true|| PlI.Enabled == true|| MñD.Enabled == true|| AD.Enabled == true|| MD.Enabled == true|| ID.Enabled == true|| PD.Enabled == true|| PlD.Enabled == true)
+            if (MñI.Enabled == true || AI.Enabled == true || MI.Enabled == true || II.Enabled == true || PI.Enabled == true || PlI.Enabled == true || MñD.Enabled == true || AD.Enabled == true || MD.Enabled == true || ID.Enabled == true || PD.Enabled == true || PlD.Enabled == true)
             {
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'> window.onload=function(){alert('Por favor asigne todas las huellas')};</script>");
             }
             else
             {
-                Response.Redirect("~/Pages/SeleccionPersona.aspx?Usuario="+Request.QueryString["Usuario"]);
+                
+                string main = "&PDPath=" + path[0] + "&PIPath=" + path[1] + "&IDPath=" + path[2] + "&IIPath=" + path[3] +
+                    "&MDPath=" + path[4] + "&MIPath=" + path[5] + "&ADPath=" + path[6] + "&AIPath=" + path[7] +
+                    "&MñDPath=" + path[8] + "&MñIPath=" + path[9] + "&PlDPath=" + path[10] + "&PlIPath=" + path[11];
+                Response.Redirect("~/Pages/SeleccionPersona.aspx?Usuario=" + Request.QueryString["Usuario"] +main);
             }
             
         }
@@ -127,7 +134,6 @@ namespace ProyectoFinal.Pages
                     }
                     else
                     {
-                        SqlConnection conn = new SqlConnection("Server = DESKTOP-LIN2QNI;Database = AplicacionesWeb; User Id =lesma; Password=Database2350." + "");
                         SqlCommand cmnd = new SqlCommand("INSERT INTO Plantilla (nombre, usuario_id)VALUES('" + plantillaNombre.Text.ToString() + "','" + int.Parse(Request.QueryString["Usuario"]) + "')");
 
                         conn.Open();
@@ -213,6 +219,20 @@ namespace ProyectoFinal.Pages
                     ay[9] = y1.Value.ToString();
                     aw[9] = w.Value.ToString();
                     ah[9] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[9] = huellas_id;
                     MñIX.Text = x1.Value.ToString();
                     MñIY.Text = y1.Value.ToString();
                     MñIW.Text = w.Value.ToString();
@@ -250,6 +270,20 @@ namespace ProyectoFinal.Pages
                     ay[7] = y1.Value.ToString();
                     aw[7] = w.Value.ToString();
                     ah[7] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[7] = huellas_id;
                     AIX.Text = x1.Value.ToString();
                     AIY.Text = y1.Value.ToString();
                     AIW.Text = w.Value.ToString();
@@ -286,6 +320,20 @@ namespace ProyectoFinal.Pages
                     ay[5] = y1.Value.ToString();
                     aw[5] = w.Value.ToString();
                     ah[5] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[5] = huellas_id;
                     MIX.Text = x1.Value.ToString();
                     MIY.Text = y1.Value.ToString();
                     MIW.Text = w.Value.ToString();
@@ -314,7 +362,7 @@ namespace ProyectoFinal.Pages
                     {
                         g.DrawImage(orgImg, new Rectangle(0, 0, bitMap.Width, bitMap.Height), CropArea, GraphicsUnit.Pixel);
                     }
-                    cropFileName = "'IndiceIzquierdo_" + fileName;
+                    cropFileName = "IndiceIzquierdo_" + fileName;
                     cropFilePath = Path.Combine(Server.MapPath("~/Huellas/"), cropFileName);
                     bitMap.Save(cropFilePath);
                     II.Enabled = false;
@@ -322,6 +370,20 @@ namespace ProyectoFinal.Pages
                     ay[3] = y1.Value.ToString();
                     aw[3] = w.Value.ToString();
                     ah[3] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[3] = huellas_id;
                     IIX.Text = x1.Value.ToString();
                     IIY.Text = y1.Value.ToString();
                     IIW.Text = w.Value.ToString();
@@ -358,6 +420,20 @@ namespace ProyectoFinal.Pages
                     ay[1] = y1.Value.ToString();
                     aw[1] = w.Value.ToString();
                     ah[1] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[1] = huellas_id;
                     PIX.Text = x1.Value.ToString();
                     PIY.Text = y1.Value.ToString();
                     PIW.Text = w.Value.ToString();
@@ -394,6 +470,20 @@ namespace ProyectoFinal.Pages
                     ay[11] = y1.Value.ToString();
                     aw[11] = w.Value.ToString();
                     ah[11] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[11] = huellas_id;
                     PlIX.Text = x1.Value.ToString();
                     PlIY.Text = y1.Value.ToString();
                     PlIW.Text = w.Value.ToString();
@@ -430,6 +520,20 @@ namespace ProyectoFinal.Pages
                     ay[8] = y1.Value.ToString();
                     aw[8] = w.Value.ToString();
                     ah[8] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[8] = huellas_id;
                     MñDX.Text = x1.Value.ToString();
                     MñDY.Text = y1.Value.ToString();
                     MñDW.Text = w.Value.ToString();
@@ -466,6 +570,20 @@ namespace ProyectoFinal.Pages
                     ay[6] = y1.Value.ToString();
                     aw[6] = w.Value.ToString();
                     ah[6] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[6] = huellas_id;
                     ADX.Text = x1.Value.ToString();
                     ADY.Text = y1.Value.ToString();
                     ADW.Text = w.Value.ToString();
@@ -502,6 +620,20 @@ namespace ProyectoFinal.Pages
                     ay[4] = y1.Value.ToString();
                     aw[4] = w.Value.ToString();
                     ah[4] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[4] = huellas_id;
                     MDX.Text = x1.Value.ToString();
                     MDY.Text = y1.Value.ToString();
                     MDW.Text = w.Value.ToString();
@@ -538,6 +670,20 @@ namespace ProyectoFinal.Pages
                     ay[2] = y1.Value.ToString();
                     aw[2] = w.Value.ToString();
                     ah[2] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[2] = huellas_id;
                     IDX.Text = x1.Value.ToString();
                     IDY.Text = y1.Value.ToString();
                     IDW.Text = w.Value.ToString();
@@ -575,7 +721,20 @@ namespace ProyectoFinal.Pages
                     ay[0] = y1.Value.ToString();
                     aw[0] = w.Value.ToString();
                     ah[0] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
 
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[0] = huellas_id;
                     PDX.Text = x1.Value.ToString();
                     PDY.Text = y1.Value.ToString();
                     PDW.Text = w.Value.ToString();
@@ -612,6 +771,20 @@ namespace ProyectoFinal.Pages
                     ay[10] = y1.Value.ToString();
                     aw[10] = w.Value.ToString();
                     ah[10] = h.Value.ToString();
+                    SqlCommand cmnd = new SqlCommand("INSERT INTO HUELLAS VALUES('" + cropFilePath + "')");
+                    conn.Open();
+                    cmnd.Connection = conn;
+                    cmnd.ExecuteNonQuery();
+
+                    cmnd = new SqlCommand("SELECT huellas_id FROM Huellas WHERE path = '" + cropFilePath + "'");
+                    cmnd.Connection = conn;
+                    SqlDataReader reader = cmnd.ExecuteReader();
+                    reader.Read();
+                    int huellas_id = int.Parse(reader[0].ToString());
+                    reader.Close();
+                    conn.Close();
+
+                    path[10] = huellas_id;
                     PlDX.Text = x1.Value.ToString();
                     PlDY.Text = y1.Value.ToString();
                     PlDW.Text = w.Value.ToString();

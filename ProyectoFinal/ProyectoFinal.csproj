@@ -126,7 +126,6 @@
     <Content Include="Pages\Login.html" />
     <Content Include="Pages\LoginMovil.html" />
     <Content Include="Pages\PantallaPrincipal.aspx" />
-    <Content Include="Pages\PantallaPrincipal.html" />
     <Content Include="Pages\PantallaPrincipalMovil.html" />
     <Content Include="Pages\Seleccion.html" />
     <Content Include="Pages\SeleccionarPersonaMovil.aspx" />

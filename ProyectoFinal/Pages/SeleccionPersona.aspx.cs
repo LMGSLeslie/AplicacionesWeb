@@ -33,6 +33,7 @@ namespace ProyectoFinal.Pages
                 lmao.Text = PostBackCount.ToString();
             }
             volver.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount+1) + "); return false;");
+            siguiente.Enabled = false;
             siguiente.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
             ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "CallJS", "afterpostback();", true);
             conn.Open();
@@ -63,6 +64,7 @@ namespace ProyectoFinal.Pages
             {
                 if (row.RowIndex == personas.SelectedIndex)
                 {
+                    siguiente.Enabled = true;
                     row.BackColor = System.Drawing.Color.LightGray;
                     row.ToolTip = string.Empty;
                 }

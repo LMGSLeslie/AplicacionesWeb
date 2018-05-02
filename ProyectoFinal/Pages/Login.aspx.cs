@@ -37,7 +37,7 @@ namespace ProyectoFinal.Pages
                     string usuario = reader[0].ToString();
                     if (password.Text == contraseña)
                     {
-                        Response.Redirect("~/Pages/seleccion.html?Usuario" + usuario + "");
+                        Response.Redirect("~/Pages/seleccion.html?Usuario=" + usuario + "");
                     }
                     else
                     {

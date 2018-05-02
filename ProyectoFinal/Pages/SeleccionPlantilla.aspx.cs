@@ -26,6 +26,7 @@ namespace ProyectoFinal.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int usuario = int.Parse(Request.QueryString["Usuario"]);
             if (IsPostBack)
             {
                 PostBackCount++;
@@ -35,7 +36,7 @@ namespace ProyectoFinal.Pages
             siguiente.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
             ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "CallJS", "afterpostback();", true);
             conn.Open();
-            SqlCommand cmnd = new SqlCommand("SELECT plantilla_id, nombre as Nombre FROM Plantilla");
+            SqlCommand cmnd = new SqlCommand("SELECT plantilla_id, nombre as Nombre FROM Plantilla WhERE usuario_id="+usuario+"");
             cmnd.CommandType = System.Data.CommandType.Text;
             cmnd.Connection = conn;
 

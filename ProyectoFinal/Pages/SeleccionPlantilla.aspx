@@ -36,6 +36,7 @@
                 <div class="col-lg-6">
                     <asp:Button ID="siguiente" runat="server" Text="SELECCIONAR" CssClass="btn btn-dark btn-outline-dark" Font-Size="Medium" />
                 </div>
+                <asp:Label runat="server" ID="l" CssClass="btn active" Font-Size="Larger" Font-Underline="True">PUTISIMA MADRE</asp:Label>
             </div>
     </form>
         </center>

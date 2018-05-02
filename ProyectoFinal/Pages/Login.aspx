@@ -26,7 +26,7 @@
                     <asp:TextBox runat="server" ID="password" CssClass="form-control" TextMode="Password" Width="100%"></asp:TextBox>
                 </div>
                 <asp:Button runat="server" CssClass="btn btn-info" Text="Log In" OnClick="login"/>
-                <asp:Label runat="server" ID="lbl">asdasd</asp:Label>
+                <asp:Label runat="server" ID="lbl" Width="100%"></asp:Label>
             </form>
         </div>
     </div>

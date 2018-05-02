@@ -5,11 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-using System.Windows;
 
 namespace ProyectoFinal.Pages
 {
-    public partial class SeleccionPersona : System.Web.UI.Page
+    public partial class SeleccionPlantilla : System.Web.UI.Page
     {
         private int PostBackCount
         {
@@ -24,7 +23,7 @@ namespace ProyectoFinal.Pages
         }
 
         SqlConnection conn = new SqlConnection("Server = DESKTOP-2F7769Q;Database = AplicacionesWeb; User Id =Rhapsodic; Password=wonderland01");
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack)
@@ -32,36 +31,37 @@ namespace ProyectoFinal.Pages
                 PostBackCount++;
                 lmao.Text = PostBackCount.ToString();
             }
-            volver.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount+1) + "); return false;");
+            volver.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
             siguiente.Attributes.Add("onClick", "history.go" + "(-" + (PostBackCount + 1) + "); return false;");
             ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "CallJS", "afterpostback();", true);
             conn.Open();
-                SqlCommand cmnd = new SqlCommand("SELECT persona_id, nombre+' ' + apellido as FULLNAME FROM Persona");
-                cmnd.CommandType = System.Data.CommandType.Text;
-                cmnd.Connection = conn;
+            SqlCommand cmnd = new SqlCommand("SELECT plantilla_id, nombre as Nombre FROM Plantilla");
+            cmnd.CommandType = System.Data.CommandType.Text;
+            cmnd.Connection = conn;
 
-                SqlDataReader reader = cmnd.ExecuteReader();
+            SqlDataReader reader = cmnd.ExecuteReader();
 
-                SqlDataAdapter adp = new SqlDataAdapter(cmnd);
+            SqlDataAdapter adp = new SqlDataAdapter(cmnd);
 
-                personas.DataSource = reader;
-                personas.DataBind();
-                conn.Close();
+            plantillas.DataSource = reader;
+            plantillas.DataBind();
+            conn.Close();
         }
+
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(personas, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click para selecionar esta persona.";
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(plantillas, "Select$" + e.Row.RowIndex);
+                e.Row.ToolTip = "Click para selecionar esta plantilla.";
             }
         }
 
         protected void OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (GridViewRow row in personas.Rows)
+            foreach (GridViewRow row in plantillas.Rows)
             {
-                if (row.RowIndex == personas.SelectedIndex)
+                if (row.RowIndex == plantillas.SelectedIndex)
                 {
                     row.BackColor = System.Drawing.Color.LightGray;
                     row.ToolTip = string.Empty;
@@ -72,21 +72,5 @@ namespace ProyectoFinal.Pages
                 }
             }
         }
-        protected void Seleccionar(object sender, HistoryEventArgs e)
-        {
-            
-        }
-        /*   protected void HazAlgoALV(object sender, EventArgs e)
-          {
-              var nombreText = nombre.Text;
-              var apellidoText = apellido.Text;
-
-              if (nombreText == "" || apellidoText == "") { 
-
-               //   ClientScript.RegisterStartupScript(this.GetType(), "Campos Requeridos", "alert('" + "Por favor llena todos los campos" + "');", true);
-
-
-              }
-          }*/
     }
 }

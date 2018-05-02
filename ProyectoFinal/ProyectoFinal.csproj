@@ -124,8 +124,10 @@
     <Content Include="Pages\AgregarPersonaMovil.html" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Login.html" />
+    <Content Include="Pages\LoginMovil.aspx" />
     <Content Include="Pages\LoginMovil.html" />
     <Content Include="Pages\PantallaPrincipal.aspx" />
+    <Content Include="Pages\PantallaPrincipalMovil.aspx" />
     <Content Include="Pages\PantallaPrincipalMovil.html" />
     <Content Include="Pages\Seleccion.html" />
     <Content Include="Pages\SeleccionarPersonaMovil.aspx" />
@@ -133,6 +135,7 @@
     <Content Include="Pages\SeleccionPersona.aspx" />
     <Content Include="Pages\SeleccionPersonaMovil.html" />
     <Content Include="Pages\SeleccionPlantilla.aspx" />
+    <Content Include="Pages\SeleccionPlantillaMovil.aspx" />
     <Content Include="Pages\SeleccionPlantillaMovil.html" />
     <Content Include="Pruebas\WebForm1.aspx" />
     <Content Include="Pruebas\WebForm2.aspx" />
@@ -205,12 +208,26 @@
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LoginMovil.aspx.cs">
+      <DependentUpon>LoginMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LoginMovil.aspx.designer.cs">
+      <DependentUpon>LoginMovil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PantallaPrincipal.aspx.cs">
       <DependentUpon>PantallaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\PantallaPrincipal.aspx.designer.cs">
       <DependentUpon>PantallaPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PantallaPrincipalMovil.aspx.cs">
+      <DependentUpon>PantallaPrincipalMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PantallaPrincipalMovil.aspx.designer.cs">
+      <DependentUpon>PantallaPrincipalMovil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\SeleccionarPersonaMovil.aspx.cs">
       <DependentUpon>SeleccionarPersonaMovil.aspx</DependentUpon>
@@ -232,6 +249,13 @@
     </Compile>
     <Compile Include="Pages\SeleccionPlantilla.aspx.designer.cs">
       <DependentUpon>SeleccionPlantilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SeleccionPlantillaMovil.aspx.cs">
+      <DependentUpon>SeleccionPlantillaMovil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SeleccionPlantillaMovil.aspx.designer.cs">
+      <DependentUpon>SeleccionPlantillaMovil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pruebas\WebForm1.aspx.cs">

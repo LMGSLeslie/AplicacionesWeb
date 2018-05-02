@@ -15,6 +15,7 @@
             height: 100%;
             width: 100%;
         }
+
         div {
             position: absolute;
             top: 10%;
@@ -40,17 +41,58 @@
             padding: 17% 18%;
         }
     </style>
+    <script>
+        function parseURLParams(url) {
+            var queryStart = url.indexOf("?") + 1,
+                queryEnd = url.indexOf("#") + 1 || url.length + 1,
+                query = url.slice(queryStart, queryEnd - 1),
+                pairs = query.replace(/\+/g, " ").split("&"),
+                parms = {}, i, n, v, nv;
+
+            if (query === url || query === "") return;
+
+
+            for (i = 0; i < pairs.length; i++) {
+                console.log(pairs[i]);
+                nv = pairs[i].split("=", 2);
+                n = decodeURIComponent(nv[0]);
+                v = decodeURIComponent(nv[1]);
+
+                if (!parms.hasOwnProperty(n)) parms[n] = [];
+                parms[n].push(nv.length === 2 ? v : null);
+
+            }
+
+
+            return parms;
+        }
+
+        function GetURLParameter() {
+            var params = parseURLParams(window.location.href);
+            var usuario = params['Usuario'][0];
+            return usuario;
+        }
+
+        function inicioRapido() {
+            var usuario = GetURLParameter();
+            window.location.href = "../Pages/PantallaPrincipalMovil.aspx?Usuario=" + usuario + "";
+        }
+
+        function seleccionarPlantilla() {
+            var usuario = GetURLParameter();
+            window.location.href = "../Pages/SeleccionPlantillaMovil.aspx?Usuario=" + usuario + "";
+        }
+    </script>
 </head>
 <body>
 
     <div class="row align-items-lg-stretch">
         <div class="col-lg-6">
-            <a href="../Pages/PantallaPrincipalMovil.html" class="btn btn-info btn-lg btn-circle" role="button">INICIO<br> RÁPIDO</a>
+            <button class="btn btn-info btn-lg btn-circle" role="button" onclick="inicioRapido()">INICIO<br> RÁPIDO</button>
         </div>
         <div class="col-lg-6 align-items-center">
-            <a href="../Pages/SeleccionPlantillaMovil.html" class="btn btn-info btn-lg btn-circle" role="button">SELECCIONAR<br> PLANTILLA</a>
+            <button class="btn btn-info btn-lg btn-circle" role="button" onclick="seleccionarPlantilla()">SELECCIONAR<br> PLANTILLA</button>
         </div>
-
     </div>
 
 

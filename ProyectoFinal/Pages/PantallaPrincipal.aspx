@@ -127,6 +127,11 @@
                         <asp:FileUpload ID="FU1" runat="server" />  
                         <asp:Button runat="server" Text="CARGAR HUELLAS" CssClass="btn btn-dark btn-outline-dark" OnClientClick="fileUpload(); return true;" OnClick="cargarImagen" Width="95%"/>
                     </div>
+                    <br />
+                    <div class="row">
+                        <asp:Button runat="server" Text="RESET" CssClass="btn btn-dark btn-outline-dark" OnClick="reset" Width="95%"/>
+                    </div>
+                    <br />
                     <div class="row">
                         <asp:Label runat="server">X: </asp:Label>
                         <asp:TextBox runat="server" ID="equis" Width="55px" readOnly="true"></asp:TextBox>

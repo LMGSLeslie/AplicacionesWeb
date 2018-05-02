@@ -13,6 +13,11 @@ namespace ProyectoFinal.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+        
+        protected void reset(object sender, EventArgs e)
+        {
             MñI.Enabled = true;
             AI.Enabled = true;
             MI.Enabled = true;
@@ -25,7 +30,6 @@ namespace ProyectoFinal.Pages
             ID.Enabled = true;
             PD.Enabled = true;
             PlD.Enabled = true;
-
         }
 
         protected void CambiarPlantilla(object sender, EventArgs e)

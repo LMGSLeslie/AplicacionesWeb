@@ -19,11 +19,11 @@
             <form id="form1" runat="server">
                 <div class="form-group">
                     <label for="email">Email address:</label>
-                    <asp:TextBox runat="server" ID="email" CssClass="input" Width="100%"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="email" CssClass="form-control" Width="100%"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <asp:TextBox runat="server" ID="password" CssClass="input" TextMode="Password" Width="100%"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="password" CssClass="form-control" TextMode="Password" Width="100%"></asp:TextBox>
                 </div>
                 <asp:Button runat="server" CssClass="btn btn-info" Text="Log In" OnClick="login"/>
                 <asp:Label runat="server" ID="lbl">asdasd</asp:Label>

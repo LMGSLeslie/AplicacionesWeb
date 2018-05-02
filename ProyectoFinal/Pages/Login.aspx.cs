@@ -30,14 +30,23 @@ namespace ProyectoFinal.Pages
 
                 conn.Open();
                 SqlDataReader reader = cmnd.ExecuteReader();
-                if (reader.Read())
+                if (reader.HasRows)
                 {
-                    int count = (int)reader[0];
-                    lbl.Text = count.ToString();
-                    if (count == 0)
+                    reader.Read();
+                    string contraseña = reader[2].ToString();
+                    string usuario = reader[0].ToString();
+                    if (password.Text == contraseña)
                     {
-                        ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'> window.onload=function(){alert('El usuario no existe')};</script>");
+                        Response.Redirect("~/Pages/seleccion.html?Usuario" + usuario + "");
                     }
+                    else
+                    {
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'> window.onload=function(){alert('Usuario o contraseña incorrectos')};</script>");
+                    }
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script type = 'text/javascript'> window.onload=function(){alert('Usuario o contraseña incorrectos')};</script>");
                 }
                 conn.Close();
             }

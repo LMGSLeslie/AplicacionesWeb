@@ -137,6 +137,7 @@
     <Content Include="Pages\SeleccionPlantilla.html" />
     <Content Include="Pages\SeleccionPlantillaMovil.html" />
     <Content Include="Pruebas\WebForm1.aspx" />
+    <Content Include="Pruebas\WebForm2.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -241,6 +242,13 @@
     </Compile>
     <Compile Include="Pruebas\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pruebas\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pruebas\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

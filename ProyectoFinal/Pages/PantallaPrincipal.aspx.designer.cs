@@ -157,6 +157,24 @@ namespace ProyectoFinal.Pages {
         protected global::System.Web.UI.WebControls.HiddenField y1;
         
         /// <summary>
+        /// Control x2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField x2;
+        
+        /// <summary>
+        /// Control y2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField y2;
+        
+        /// <summary>
         /// Control w.
         /// </summary>
         /// <remarks>

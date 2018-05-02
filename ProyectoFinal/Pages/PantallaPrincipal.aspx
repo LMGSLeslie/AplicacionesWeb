@@ -28,6 +28,8 @@
         function SelectCropArea(e) {
             $('#<%=x1.ClientID%>').val(parseInt(e.x));  
             $('#<%=y1.ClientID%>').val(parseInt(e.y));  
+            $('#<%=x2.ClientID%>').val(parseInt(e.x));  
+            $('#<%=y2.ClientID%>').val(parseInt(e.y));
             $('#<%=w.ClientID%>').val(parseInt(e.w));  
             $('#<%=h.ClientID%>').val(parseInt(e.h));
             $('#equis').val(e.x)
@@ -99,7 +101,9 @@
                     <asp:Image ID="imgUpload" runat="server" Width="100%" />
                     <div class="row">
                         <asp:HiddenField ID="x1" runat="server" />  
-                        <asp:HiddenField ID="y1" runat="server" />  
+                        <asp:HiddenField ID="y1" runat="server" />
+                        <asp:HiddenField ID="x2" runat="server" />  
+                        <asp:HiddenField ID="y2" runat="server" />
                         <asp:HiddenField ID="w" runat="server" />  
                         <asp:HiddenField ID="h" runat="server" />                             
                     </div>
@@ -132,7 +136,7 @@
                         <asp:Label runat="server">W: </asp:Label>
                         <asp:TextBox runat="server" Width="55px" ID="ww" readOnly="true"></asp:TextBox>
                         <asp:Label runat="server">H: </asp:Label>
-                        <asp:TextBox runat="server" Width="55px" ID="ache" readOnly="true"></asp:TextBox>   
+                        <asp:TextBox runat="server" Width="55px" ID="ache" readOnly="true"></asp:TextBox> 
                     </div>
                 </div>  
             </div>

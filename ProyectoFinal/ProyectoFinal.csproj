@@ -122,6 +122,7 @@
     <Content Include="Images\IconoBarra.png" />
     <Content Include="Pages\AgregarPersona.aspx" />
     <Content Include="Pages\AgregarPersonaMovil.html" />
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Login.html" />
     <Content Include="Pages\LoginMovil.html" />
     <Content Include="Pages\PantallaPrincipal.aspx" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="Pages\AgregarPersona.aspx.designer.cs">
       <DependentUpon>AgregarPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\PantallaPrincipal.aspx.cs">
       <DependentUpon>PantallaPrincipal.aspx</DependentUpon>

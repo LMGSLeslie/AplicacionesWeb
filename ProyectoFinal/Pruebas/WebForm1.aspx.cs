@@ -66,7 +66,7 @@ namespace ProyectoFinal.Pruebas
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
                     using (Graphics g = Graphics.FromImage(bitMap))
                     {
-                        g.DrawImage(orgImg, new Rectangle(0, 0, Convert.ToInt32(W.Value), Convert.ToInt32(H.Value)), Convert.ToInt32(X.Value), Convert.ToInt32(Y.Value), Convert.ToInt32(W.Value), Convert.ToInt32(H.Value), GraphicsUnit.Pixel);
+                        g.DrawImage(orgImg, new Rectangle(0, 0, Convert.ToInt32(W.Value)*2, Convert.ToInt32(H.Value)*2), Convert.ToInt32(X.Value), Convert.ToInt32(Y.Value), Convert.ToInt32(W.Value), Convert.ToInt32(H.Value), GraphicsUnit.Pixel);
                     }
                     cropFileName = "crop_" + fileName;
                     cropFilePath = Path.Combine(Server.MapPath("~/Huellas/"), cropFileName);

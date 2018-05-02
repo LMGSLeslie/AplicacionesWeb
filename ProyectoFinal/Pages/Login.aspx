@@ -1,38 +1,34 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProyectoFinal.Pages.Login" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <meta charset="utf-8" />
-    <title>Login</title>
 </head>
 <body>
     <div class="row align-items-center">
         <div class=" =col-lg-8">
             <img class="img-responsive" src="../Images/HuellasLogin.jpg" alt="Huella digital" height="598" width="800" />
         </div>
-
         <div class="col-lg-4 center">
-            <form action="/action_page.php" >
-
+            <form id="form1" runat="server">
                 <div class="form-group">
                     <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
+                    <asp:TextBox runat="server" ID="email" CssClass="input" Width="100%"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
+                    <asp:TextBox runat="server" ID="password" CssClass="input" TextMode="Password" Width="100%"></asp:TextBox>
                 </div>
-                <div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
-                </div>
-                <a href="../Pages/Seleccion.html" class="btn btn-info" role="button">Log In</a>
+                <asp:Button runat="server" CssClass="btn btn-info" Text="Log In" OnClick="login"/>
+                <asp:Label runat="server" ID="lbl">asdasd</asp:Label>
             </form>
         </div>
     </div>
-    
-
-    
 </body>
 </html>

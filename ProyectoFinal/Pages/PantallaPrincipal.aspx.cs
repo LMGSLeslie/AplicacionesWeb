@@ -88,7 +88,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -116,7 +116,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -144,7 +144,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -172,7 +172,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -200,7 +200,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -228,7 +228,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -256,7 +256,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -284,7 +284,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -312,7 +312,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -340,7 +340,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -368,7 +368,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);
@@ -396,7 +396,7 @@ namespace ProyectoFinal.Pages
             if (File.Exists(filePath))
             {
                 System.Drawing.Image orgImg = System.Drawing.Image.FromFile(filePath);
-                Rectangle CropArea = new Rectangle(int.Parse(x1.Value), int.Parse(y1.Value), int.Parse(w.Value), int.Parse(h.Value));
+                Rectangle CropArea = new Rectangle(Convert.ToInt32(x1.Value), Convert.ToInt32(y1.Value), Convert.ToInt32(w.Value), Convert.ToInt32(h.Value));
                 try
                 {
                     Bitmap bitMap = new Bitmap(CropArea.Width, CropArea.Height);

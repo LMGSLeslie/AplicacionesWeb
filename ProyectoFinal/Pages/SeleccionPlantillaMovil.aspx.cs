@@ -124,7 +124,7 @@ namespace ProyectoFinal.Pages
                     + "&PlIX=" + x[11] + "&PlIY=" + y[11] + "&PlIW=" + width[11] + "&PlIH=" + height[11];
 
 
-                Response.Redirect("~/Pages/PantallaPrincipalMovil.aspx?Usuario=" + Request.QueryString["Usuario"] + main);
+                Response.Redirect("~/Pages/PantallaPrincipal.aspx?Usuario=" + Request.QueryString["Usuario"] + main);
 
             }
         }

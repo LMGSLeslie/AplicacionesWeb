@@ -24,54 +24,54 @@ namespace ProyectoFinal.Pages
         {
             if (Request.QueryString["PDX"] != null)
             {
-                PDX.Text = Request.QueryString["PDX"];
-                PDY.Text = Request.QueryString["PDY"];
-                PDW.Text = Request.QueryString["PDW"];
-                PDH.Text = Request.QueryString["PDH"];
-                PIX.Text = Request.QueryString["PIX"];
-                PIY.Text = Request.QueryString["PIY"];
-                PIW.Text = Request.QueryString["PIW"];
-                PIH.Text = Request.QueryString["PIH"];
-                IDX.Text = Request.QueryString["IDX"];
-                IDY.Text = Request.QueryString["IDY"];
-                IDW.Text = Request.QueryString["IDW"];
-                IDH.Text = Request.QueryString["IDH"];
-                IIX.Text = Request.QueryString["IIX"];
-                IIY.Text = Request.QueryString["IIY"];
-                IIW.Text = Request.QueryString["IIW"];
-                IIH.Text = Request.QueryString["IIH"];
-                MDX.Text = Request.QueryString["MDX"];
-                MDY.Text = Request.QueryString["MDY"];
-                MDW.Text = Request.QueryString["MDW"];
-                MDH.Text = Request.QueryString["MDH"];
-                MIX.Text = Request.QueryString["MIX"];
-                MIY.Text = Request.QueryString["MIY"];
-                MIW.Text = Request.QueryString["MIW"];
-                MIH.Text = Request.QueryString["MIH"];
-                ADX.Text = Request.QueryString["ADX"];
-                ADY.Text = Request.QueryString["ADY"];
-                ADW.Text = Request.QueryString["ADW"];
-                ADH.Text = Request.QueryString["ADH"];
-                AIX.Text = Request.QueryString["AIX"];
-                AIY.Text = Request.QueryString["AIY"];
-                AIW.Text = Request.QueryString["AIW"];
-                AIH.Text = Request.QueryString["AIH"];
-                MñDX.Text = Request.QueryString["MñDX"];
-                MñDY.Text = Request.QueryString["MñDY"];
-                MñDW.Text = Request.QueryString["MñDW"];
-                MñDH.Text = Request.QueryString["MñDH"];
-                MñIX.Text = Request.QueryString["MñIX"];
-                MñIY.Text = Request.QueryString["MñIY"];
-                MñIW.Text = Request.QueryString["MñIW"];
-                MñIH.Text = Request.QueryString["MñIH"];
-                PlDX.Text = Request.QueryString["PlDX"];
-                PlDY.Text = Request.QueryString["PlDY"];
-                PlDW.Text = Request.QueryString["PlDW"];
-                PlDH.Text = Request.QueryString["PlDH"];
-                PlIX.Text = Request.QueryString["PlIX"];
-                PlIY.Text = Request.QueryString["PlIY"];
-                PlIW.Text = Request.QueryString["PlIW"];
-                PlIH.Text = Request.QueryString["PlIH"];
+                PDX.Value = Request.QueryString["PDX"];
+                PDY.Value = Request.QueryString["PDY"];
+                PDW.Value = Request.QueryString["PDW"];
+                PDH.Value = Request.QueryString["PDH"];
+                PIX.Value = Request.QueryString["PIX"];
+                PIY.Value = Request.QueryString["PIY"];
+                PIW.Value = Request.QueryString["PIW"];
+                PIH.Value = Request.QueryString["PIH"];
+                IDX.Value = Request.QueryString["IDX"];
+                IDY.Value = Request.QueryString["IDY"];
+                IDW.Value = Request.QueryString["IDW"];
+                IDH.Value = Request.QueryString["IDH"];
+                IIX.Value = Request.QueryString["IIX"];
+                IIY.Value = Request.QueryString["IIY"];
+                IIW.Value = Request.QueryString["IIW"];
+                IIH.Value = Request.QueryString["IIH"];
+                MDX.Value = Request.QueryString["MDX"];
+                MDY.Value = Request.QueryString["MDY"];
+                MDW.Value = Request.QueryString["MDW"];
+                MDH.Value = Request.QueryString["MDH"];
+                MIX.Value = Request.QueryString["MIX"];
+                MIY.Value = Request.QueryString["MIY"];
+                MIW.Value = Request.QueryString["MIW"];
+                MIH.Value = Request.QueryString["MIH"];
+                ADX.Value = Request.QueryString["ADX"];
+                ADY.Value = Request.QueryString["ADY"];
+                ADW.Value = Request.QueryString["ADW"];
+                ADH.Value = Request.QueryString["ADH"];
+                AIX.Value = Request.QueryString["AIX"];
+                AIY.Value = Request.QueryString["AIY"];
+                AIW.Value = Request.QueryString["AIW"];
+                AIH.Value = Request.QueryString["AIH"];
+                MñDX.Value = Request.QueryString["MñDX"];
+                MñDY.Value = Request.QueryString["MñDY"];
+                MñDW.Value = Request.QueryString["MñDW"];
+                MñDH.Value = Request.QueryString["MñDH"];
+                MñIX.Value = Request.QueryString["MñIX"];
+                MñIY.Value = Request.QueryString["MñIY"];
+                MñIW.Value = Request.QueryString["MñIW"];
+                MñIH.Value = Request.QueryString["MñIH"];
+                PlDX.Value = Request.QueryString["PlDX"];
+                PlDY.Value = Request.QueryString["PlDY"];
+                PlDW.Value = Request.QueryString["PlDW"];
+                PlDH.Value = Request.QueryString["PlDH"];
+                PlIX.Value = Request.QueryString["PlIX"];
+                PlIY.Value = Request.QueryString["PlIY"];
+                PlIW.Value = Request.QueryString["PlIW"];
+                PlIH.Value = Request.QueryString["PlIH"];
                 plantillaNombre.Enabled = false;
             }
             else
@@ -234,10 +234,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[9] = huellas_id;
-                    MñIX.Text = x1.Value.ToString();
-                    MñIY.Text = y1.Value.ToString();
-                    MñIW.Text = w.Value.ToString();
-                    MñIH.Text = h.Value.ToString();
+                    MñIX.Value = x1.Value.ToString();
+                    MñIY.Value = y1.Value.ToString();
+                    MñIW.Value = w.Value.ToString();
+                    MñIH.Value = h.Value.ToString();
 
                 }
                 catch (Exception ex)
@@ -285,10 +285,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[7] = huellas_id;
-                    AIX.Text = x1.Value.ToString();
-                    AIY.Text = y1.Value.ToString();
-                    AIW.Text = w.Value.ToString();
-                    AIH.Text = h.Value.ToString();
+                    AIX.Value = x1.Value.ToString();
+                    AIY.Value = y1.Value.ToString();
+                    AIW.Value = w.Value.ToString();
+                    AIH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -335,10 +335,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[5] = huellas_id;
-                    MIX.Text = x1.Value.ToString();
-                    MIY.Text = y1.Value.ToString();
-                    MIW.Text = w.Value.ToString();
-                    MIH.Text = h.Value.ToString();
+                    MIX.Value = x1.Value.ToString();
+                    MIY.Value = y1.Value.ToString();
+                    MIW.Value = w.Value.ToString();
+                    MIH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -385,10 +385,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[3] = huellas_id;
-                    IIX.Text = x1.Value.ToString();
-                    IIY.Text = y1.Value.ToString();
-                    IIW.Text = w.Value.ToString();
-                    IIH.Text = h.Value.ToString();
+                    IIX.Value = x1.Value.ToString();
+                    IIY.Value = y1.Value.ToString();
+                    IIW.Value = w.Value.ToString();
+                    IIH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -435,10 +435,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[1] = huellas_id;
-                    PIX.Text = x1.Value.ToString();
-                    PIY.Text = y1.Value.ToString();
-                    PIW.Text = w.Value.ToString();
-                    PIH.Text = h.Value.ToString();
+                    PIX.Value = x1.Value.ToString();
+                    PIY.Value = y1.Value.ToString();
+                    PIW.Value = w.Value.ToString();
+                    PIH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -485,10 +485,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[11] = huellas_id;
-                    PlIX.Text = x1.Value.ToString();
-                    PlIY.Text = y1.Value.ToString();
-                    PlIW.Text = w.Value.ToString();
-                    PlIH.Text = h.Value.ToString();
+                    PlIX.Value = x1.Value.ToString();
+                    PlIY.Value = y1.Value.ToString();
+                    PlIW.Value = w.Value.ToString();
+                    PlIH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -535,10 +535,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[8] = huellas_id;
-                    MñDX.Text = x1.Value.ToString();
-                    MñDY.Text = y1.Value.ToString();
-                    MñDW.Text = w.Value.ToString();
-                    MñDH.Text = h.Value.ToString();
+                    MñDX.Value = x1.Value.ToString();
+                    MñDY.Value = y1.Value.ToString();
+                    MñDW.Value = w.Value.ToString();
+                    MñDH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -585,10 +585,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[6] = huellas_id;
-                    ADX.Text = x1.Value.ToString();
-                    ADY.Text = y1.Value.ToString();
-                    ADW.Text = w.Value.ToString();
-                    ADH.Text = h.Value.ToString();
+                    ADX.Value = x1.Value.ToString();
+                    ADY.Value = y1.Value.ToString();
+                    ADW.Value = w.Value.ToString();
+                    ADH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -635,10 +635,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[4] = huellas_id;
-                    MDX.Text = x1.Value.ToString();
-                    MDY.Text = y1.Value.ToString();
-                    MDW.Text = w.Value.ToString();
-                    MDH.Text = h.Value.ToString();
+                    MDX.Value = x1.Value.ToString();
+                    MDY.Value = y1.Value.ToString();
+                    MDW.Value = w.Value.ToString();
+                    MDH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -685,10 +685,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[2] = huellas_id;
-                    IDX.Text = x1.Value.ToString();
-                    IDY.Text = y1.Value.ToString();
-                    IDW.Text = w.Value.ToString();
-                    IDH.Text = h.Value.ToString();
+                    IDX.Value = x1.Value.ToString();
+                    IDY.Value = y1.Value.ToString();
+                    IDW.Value = w.Value.ToString();
+                    IDH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -736,10 +736,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[0] = huellas_id;
-                    PDX.Text = x1.Value.ToString();
-                    PDY.Text = y1.Value.ToString();
-                    PDW.Text = w.Value.ToString();
-                    PDH.Text = h.Value.ToString();
+                    PDX.Value = x1.Value.ToString();
+                    PDY.Value = y1.Value.ToString();
+                    PDW.Value = w.Value.ToString();
+                    PDH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -786,10 +786,10 @@ namespace ProyectoFinal.Pages
                     conn.Close();
 
                     path[10] = huellas_id;
-                    PlDX.Text = x1.Value.ToString();
-                    PlDY.Text = y1.Value.ToString();
-                    PlDW.Text = w.Value.ToString();
-                    PlDH.Text = h.Value.ToString();
+                    PlDX.Value = x1.Value.ToString();
+                    PlDY.Value = y1.Value.ToString();
+                    PlDW.Value = w.Value.ToString();
+                    PlDH.Value = h.Value.ToString();
                 }
                 catch (Exception ex)
                 {

@@ -94,26 +94,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><asp:Button runat="server" Text="ASIGNAR HUELLAS" CssClass="btn btn-dark btn-outline-dark" OnClick="asignarHuellas" Width="95%"/></li>
                         <li><asp:Button runat="server" Text="GUARDAR PLANTILLA" CssClass="btn btn-dark btn-outline-dark" OnClick="guardarPlantilla" Width="95%"/></li>
-                        <li><a href="#">CAMBIAR HUELLAS</a></li>
-                        <li><a href="../Pages/SeleccionPlantillaMovil.html">CAMBIAR PLANTILLA</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <nav class="navbar navbar-inverse navbar-static-top " role="navigation">
-            <div id="divContainer1" class="container">
-
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarContent1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-
-                <div id="navbarContent1" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                       <li><asp:Button ID="MñI" runat="server" CssClass="btn btn-dark btn-outline-dark responsive-width" Text="MñI" Width="100%" OnClick="meñiqueIzquierdo" /></li> 
+                        <li><asp:FileUpload ID="FU1" runat="server" />  
+                        <asp:Button runat="server" Text="CARGAR HUELLAS" CssClass="btn btn-dark btn-outline-dark" OnClientClick="fileUpload(); return true;" OnClick="cargarImagen" Width="95%"/></li>
+                        <li><asp:Button runat="server" Text="CAMBIAR PLANTILLA" CssClass="btn btn-dark btn-outline-dark" OnClick="CambiarPlantilla" Width="95%"/></li>
+                        <li><asp:Button ID="MñI" runat="server" CssClass="btn btn-dark btn-outline-dark responsive-width" Text="MñI" Width="100%" OnClick="meñiqueIzquierdo" /></li> 
                     <li><asp:Button ID="AI" runat="server" CssClass="btn btn-dark btn-outline-dark responsive-width" Text="AI" Width="100%" OnClick="anularIzquierdo"/></li>
                     <li><asp:Button ID="MI" runat="server" CssClass="btn btn-dark btn-outline-dark responsive-width" Text="MI" Width="100%" OnClick="medioIzquierdo"/></li>
                     <li><asp:Button ID="II" runat="server" CssClass="btn btn-dark btn-outline-dark responsive-width" Text="II" Width="100%" OnClick="indiceIzquierdo"/></li>
@@ -130,7 +114,8 @@
             </div>
         </nav>
 
-        <div class="col-8">
+
+        <div>
                     <asp:Image ID="imgUpload" runat="server" Width="100%" />
                     <div class="row">
                         <asp:HiddenField ID="x1" runat="server" />  
@@ -141,6 +126,84 @@
                         <asp:HiddenField ID="h" runat="server" />                             
                     </div>
                 </div>
+        <br />
+        <div>
+            <label>Nombre de la plantilla:</label>
+            <asp:TextBox runat="server" ID="plantillaNombre"></asp:TextBox>
+
+        </div>
+                        <asp:HiddenField runat="server" ID="PDX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PDY"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="PDW"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PDH"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="PIX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PIY"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="PIW"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PIH"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="IDX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="IDY"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="IDW"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="IDH"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="IIX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="IIY"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="IIW"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="IIH"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="MDX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MDY"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="MDW"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MDH"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="MIX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MIY"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="MIW"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MIH"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="ADX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="ADY"> </asp:HiddenField>
+                                                                
+                        <asp:hiddenField runat="server" ID="ADW"> </asp:hiddenField>
+                        <asp:HiddenField runat="server" ID="ADH"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="AIX"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="AIY"> </asp:HiddenField>
+                                                                
+                        <asp:HiddenField runat="server" ID="AIW"> </asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="AIH"> </asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="MñDX"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MñDY"></asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="MñDW"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MñDH"></asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="MñIX"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MñIY"></asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="MñIW"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="MñIH"></asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="PlDX"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PlDY"></asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="PlDW"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PlDH"></asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="PlIX"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PlIY"></asp:HiddenField>
+                    
+                        <asp:HiddenField runat="server" ID="PlIW"></asp:HiddenField>
+                        <asp:HiddenField runat="server" ID="PlIH"></asp:HiddenField>
+                    
     </form>
 </body>
 </html>

@@ -45,8 +45,8 @@
         <img src="http://blitzrdigital.com/wp-content/uploads/2017/01/fingerprint.png" width="100" height="70"/>
     </div>
     <br/><br/>
-        <a href="#" style="width: 80%" class="list-group-item disabled">SELECCIONE UNA PLANTILLA</a>
-            <div style="width: 80%; height: 400px; overflow: scroll; text-align: left" class="list-group">
+        <a href="#" style="width: 100%; top: 0px; left: 0px;" class="list-group-item disabled">SELECCIONE UNA PLANTILLA</a>
+            <div style="width: 100%; height: 400px; overflow: scroll; text-align: left" class="list-group">
                 <asp:GridView ID="plantillas" runat="server" BorderColor="LightGray" BorderWidth="1px" BorderStyle="Dotted" CellSpacing="10" ClientIDMode="Static" AutoGenerateColumns="true"  Width="100%" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged" >
                     <RowStyle BorderColor="LightGray" Width="100%" CssClass="btn-outline-dark" HorizontalAlign="Center" Font-Size="Larger" Font-Strikeout="False" Height="50px"/>
                 </asp:GridView>
